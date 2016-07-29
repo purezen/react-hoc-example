@@ -16,3 +16,11 @@ export function fetchCurrencyList() {
       .then(json => dispatch(loadCurrencyList(json.currency)))
   }
 }
+
+export function setSearchTerm(listRef,e) {
+  return {
+    type: 'SET_SEARCH_TERM',
+    searchTerm: e.target.value,
+    listRef: listRef
+  }
+}

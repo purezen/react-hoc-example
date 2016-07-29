@@ -1,21 +1,15 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
+import BeerListContainer from '../containers/BeerListContainer'
 
 class App extends Component {
   constructor(props) {
     super(props)
   }
 
-  componentDidMount() {
-    this.props.getCurrencyList()
-  }
-
   render() {
-    const currencyList = this.props.currencyList.map((c) => <div>{c.name}</div>)
-
     return (
       <div>
-        <strong>Currency List</strong>
-        {currencyList}
+        <BeerListContainer/>
       </div>
     )
   }
