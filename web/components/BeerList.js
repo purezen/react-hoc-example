@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BeerList = (props) => {
-  const list = props.beerList.map ((beer,i) => <div key={i}>{beer}</div>)
+  const list = props.filteredList.map ((beer,i) => <div key={i}>{beer}</div>)
 
   return (
     <div>

@@ -19,7 +19,7 @@ const getSearchTerm = (state) => {
 const mapStateToProps = (state) => {
   return {
     searchTerm: getSearchTerm(state),
-    pieList: getFilteredList(state)
+    filteredList: getFilteredList(state)
   }
 }
 
