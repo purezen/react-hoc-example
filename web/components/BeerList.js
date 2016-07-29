@@ -1,17 +1,35 @@
-import React from 'react'
+import React, {Component} from 'react'
+import FilterComponent from '../utils/FilterComponent'
 
-const BeerList = (props) => {
-  const list = props.filteredList.map ((beer,i) => <div key={i}>{beer}</div>)
+class BeerList extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      filteredList: []
+    }
+  }
 
-  return (
-    <div>
-      <input
-        value={props.searchTerm}
-        onChange={props.setSearchTerm.bind(this)}
-      />
-    {list}
-    </div>
-  )
+  getList() {
+    return this.props.beerList
+  }
+
+  setFilteredList(filteredList) {
+    this.setState({ filteredList: filteredList })
+  }
+
+  render() {
+    const filteredList = this.state.filteredList.map ((beer,i) => <div key={i}>{beer}</div>)
+
+    return (
+      <div>
+        <FilterComponent
+          getList={this.getList()}
+          setFilteredList={this.setFilteredList.bind(this)}
+        />
+      {filteredList}
+      </div>
+    )
+  }
 }
 
 export default BeerList
