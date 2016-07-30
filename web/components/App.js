@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-// import BeerListContainer from '../containers/BeerListContainer'
+import BeerListContainer from '../containers/BeerListContainer'
 import PieListContainer from '../containers/PieListContainer'
 
 class App extends Component {
@@ -10,6 +10,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <BeerListContainer/>
         <PieListContainer/>
       </div>
     )

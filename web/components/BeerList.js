@@ -5,11 +5,7 @@ const BeerList = (props) => {
 
   return (
     <div>
-      <input
-        value={props.searchTerm}
-        onChange={props.setSearchTerm.bind(this)}
-      />
-    {list}
+      {list}
     </div>
   )
 }
